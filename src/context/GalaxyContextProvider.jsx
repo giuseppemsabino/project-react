@@ -15,20 +15,10 @@ export const GalaxyContextProvider = ({children}) =>{
         fetch(apiUrl)
         .then(response => response.json())
         .then((data) => {
-            console.log("api response:", data.data);
+            
 
-            const galaxies = data.data.map((galaxy) => ({
-                id: galaxy.id,
-                name: galaxy.name,
-                type_id: galaxy.type_id,
-                diameter: galaxy.diameter,
-                mass: galaxy.mass,
-                age: galaxy.age
-            }))
-
-            const newGalaxyData = {...galaxyData, galaxies}
-
-            setGalaxyData(newGalaxyData)
+            setGalaxyData(data.data)
+            console.log(data.data);
             
         })
     }
