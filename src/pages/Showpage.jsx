@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export default function Showpage() {
+export default function ShowPage() {
   const { id } = useParams();
   const apiUrl = import.meta.env.VITE_APP_FRONTEND_URL;
   const imgUrl = import.meta.env.VITE_IMAGE_URL;

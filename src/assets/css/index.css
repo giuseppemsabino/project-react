@@ -1,0 +1,13 @@
+body{
+    background-color: black !important;
+    color: white !important;
+}
+.particles-content-absolute{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}

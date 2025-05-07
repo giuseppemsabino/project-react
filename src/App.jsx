@@ -1,20 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
 import { GalaxyContextProvider } from "./context/GalaxyContextProvider";
-import Showpage from "./pages/Showpage";
 import DefaultLayout from "./layouts/DefaultLayout";
+import HomePage from "./pages/Homepage";
+import ShowPage from "./pages/ShowPage";
+import ArchivePage from "./pages/ArchivePage";
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <GalaxyContextProvider>
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
+            <Route index Component={HomePage} />
             <Route path="/galaxies">
-              <Route index Component={Homepage} />
-              <Route path=":id" Component={Showpage} />
+              <Route index Component={ArchivePage}/>
+              <Route path=":id" Component={ShowPage} />
             </Route>
           </Route>
         </Routes>
