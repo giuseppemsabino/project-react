@@ -1,26 +1,22 @@
 import { Link } from "react-router-dom";
 import { useGalaxyContext } from "../context/GalaxyContextProvider";
 
-export default function ArchivePage(){
-    const galaxies = useGalaxyContext();
+
+export default function ArchivePage() {
+  const { galaxyData } = useGalaxyContext();
 
   const imgUrl = import.meta.env.VITE_IMAGE_URL;
 
-  console.log(galaxies);
+  console.log(galaxyData);
 
   return (
     <div className="container mt-4">
       <h2>Galaxies</h2>
-      
 
       <div className="row gap-1 my-5 d-flex justify-content-center">
-        {galaxies.map((galaxy) => (
+        {galaxyData.map((galaxy) => (
           <div class="card col-3" key={galaxy.id}>
-            <img
-              src={imgUrl + galaxy.image}
-              class="card-img-top"
-              alt="..."
-            />
+            <img src={imgUrl + galaxy.image} class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">{galaxy.name}</h5>
               <p class="card-text">

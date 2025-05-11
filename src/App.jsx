@@ -4,6 +4,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/Homepage";
 import ShowPage from "./pages/ShowPage";
 import ArchivePage from "./pages/ArchivePage";
+import PhenomenaPage from "./pages/PhenomenaPage";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route Component={DefaultLayout}>
             <Route index Component={HomePage} />
+            <Route path="/phenomena" Component={PhenomenaPage}/>
             <Route path="/galaxies">
               <Route index Component={ArchivePage}/>
               <Route path=":id" Component={ShowPage} />

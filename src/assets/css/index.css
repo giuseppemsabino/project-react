@@ -1,13 +1,76 @@
-body{
-    background-color: black !important;
-    color: white !important;
+body {
+  background-color: black !important;
+  color: white !important ;
+  font-family: "Audiowide", sans-serif !important;
 }
-.particles-content-absolute{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 1;
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+.particles-content-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.particles-content-absolute h1{
+  font-size: 3rem;
+  font-weight: 500;
+
+}
+
+/* ? firts section under particles */
+.intro-section{
+  height: 600px;
+}
+.intro-section .shortcut {
+  color: white;
+  transition: 1s;
+
+}
+.intro-section .highlight:hover{
+  color: black ;
+  font-weight: 900;
+  background-color: white;
+  border-radius: 3px;
+  padding: 2px;
+  transition: 1s;
+}
+.intro-img {
+  width: 100%;
+}
+
+/* ? second section  */
+.frase-section{
+  position: relative;
+  background-image: url('../img/frase_section_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frase-box{
+  padding: 20px;
+  border-radius: 8px;
+   box-shadow: 1px 1px 20px 18px rgba(51 40 40 / 71%);
+}
+.photo-credits{
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  font-size: 0.8rem;
+}
+
+/* ? 3th section carousel section  */
+.carousel-inner img{
+  max-height: 600px;
+}
+

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import "../assets/css/navBar.css"
+import "../assets/css/navBar.css";
 import { Link } from "react-router-dom";
 
 const GooeyNav = ({
@@ -20,22 +20,13 @@ const GooeyNav = ({
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
 
-  const getXY = (
-    distance,
-    pointIndex,
-    totalPoints
-  ) => {
+  const getXY = (distance, pointIndex, totalPoints) => {
     const angle =
       ((360 + noise(8)) / totalPoints) * pointIndex * (Math.PI / 180);
     return [distance * Math.cos(angle), distance * Math.sin(angle)];
   };
 
-  const createParticle = (
-    i,
-    t,
-    d,
-    r
-  ) => {
+  const createParticle = (i, t, d, r) => {
     let rotate = noise(r / 10);
     return {
       start: getXY(d[0], particleCount - i, particleCount),
@@ -133,28 +124,22 @@ const GooeyNav = ({
       e.preventDefault();
       const liEl = e.currentTarget.parentElement;
       if (liEl) {
-        handleClick(
-          { currentTarget: liEl },
-          index
-        );
+        handleClick({ currentTarget: liEl }, index);
       }
     }
   };
 
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
-    const activeLi = navRef.current.querySelectorAll("li")[
-      activeIndex
-    ];
+    const activeLi = navRef.current.querySelectorAll("li")[activeIndex];
     if (activeLi) {
       updateEffectPosition(activeLi);
       textRef.current?.classList.add("active");
     }
 
     const resizeObserver = new ResizeObserver(() => {
-      const currentActiveLi = navRef.current?.querySelectorAll("li")[
-        activeIndex
-      ];
+      const currentActiveLi =
+        navRef.current?.querySelectorAll("li")[activeIndex];
       if (currentActiveLi) {
         updateEffectPosition(currentActiveLi);
       }
@@ -165,21 +150,38 @@ const GooeyNav = ({
   }, [activeIndex]);
 
   return (
-    <div className="gooey-nav-container" ref={containerRef}>
-      <nav>
-        <ul ref={navRef}>
+    <div className="gooey-nav-container " ref={containerRef}>
+      <nav className="navbar text-center navbar-expand-lg justify-content-center gap-3">
+        <button
+          className="navbar-toggler d-lg-none text-white border-0 "
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav flex-column flex-md-row text-start" ref={navRef}>
           {items.map((item, index) => (
-            <Link to={item.to} onKeyDown={(e) => handleKeyDown(e, index)}>
-            <li
+            <Link
               key={index}
-              className={activeIndex === index ? "active" : ""}
-              onClick={(e) => handleClick(e, index)}
+              to={item.to}
+              onKeyDown={(e) => handleKeyDown(e, index)}
             >
+              <li
+                key={index}
+                className={activeIndex === index ? "active text-center" : "text-start"}
+                onClick={(e) => handleClick(e, index)}
+              >
                 {item.label}
-            </li>
-              </Link>
+              </li>
+            </Link>
           ))}
         </ul>
+        </div>
       </nav>
       <span className="effect filter" ref={filterRef} />
       <span className="effect text" ref={textRef} />
