@@ -178,10 +178,41 @@ section {
   text-align: center;
 }
 .galaxy-show-name h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   padding: 10px 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 20px 10px rgba(255, 255, 255, 0.329);
   background-color: rgba(0, 0, 0, 0.3);
 }
+.galaxy-stats{
+  border: 1px solid white;
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+}
+.galaxy-stats > div{
+  width: 100%;
+  border-top: 1px solid white;
+}
+.galaxy-stats :first-child{
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .galaxy-stats{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+  }
+  .galaxy-stats > div {
+    border-left: 1px solid white;
+    border-top: none;
+  }
+  
+}
+ 
 

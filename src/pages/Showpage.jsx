@@ -32,22 +32,22 @@ export default function ShowPage() {
         </div>
       </div>
       <div className="container">
-        <div className="galaxy-stats d-flex justify-content-around align-content-center text-center">
+        <div className="galaxy-stats ">
           <div>
               <h3>Diameter</h3> 
             <p>
               {galaxy.diameter} light years
             </p>
           </div>
-          <div>
+          <div className="">
+              <h3>Mass</h3>
             <p>
-              {/* <strong>mass:</strong> */}
               {galaxy.mass} solar masses
             </p>
           </div>
           <div>
+              <h3>Age</h3> 
             <p>
-              {/* <strong>age:</strong>  */}
               {galaxy.age} billion years
             </p>
           </div>
