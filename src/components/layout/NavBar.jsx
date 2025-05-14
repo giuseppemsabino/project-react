@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import "../assets/css/navBar.css";
+import "../../assets/css/navBar.css";
 import { Link } from "react-router-dom";
 
 const GooeyNav = ({
@@ -151,7 +151,7 @@ const GooeyNav = ({
 
   return (
     <div className="gooey-nav-container " ref={containerRef}>
-      <nav className="navbar text-center navbar-expand-lg justify-content-center gap-3">
+      <nav className="navbar  text-center navbar-expand-lg justify-content-center gap-3 ">
         <button
           className="navbar-toggler d-lg-none text-white border-0 "
           type="button"

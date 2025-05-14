@@ -23,26 +23,34 @@ export default function ShowPage() {
   if (!galaxy) return <p>Loading galaxy...</p>;
 
   return (
-    <div>
+    <div className="container">
       <h1>{galaxy.name}</h1>
-      <img src={imgUrl + galaxy.image} alt={galaxy.image} width="400" />
-      <p><strong>description:</strong> {galaxy.description}</p>
-      <p><strong>diameter:</strong> {galaxy.diameter} años luz</p>
-      <p><strong>mass:</strong> {galaxy.mass} masas solares</p>
-      <p><strong>age:</strong> {galaxy.age} mil millones de años</p>
+      <div>
+        <div>
 
+      <img src={imgUrl + galaxy.image} alt={galaxy.image} width="400" />
+        </div>
+        <div>
+
+      <p><strong>diameter:</strong> {galaxy.diameter} light years</p>
+      <p><strong>mass:</strong> {galaxy.mass} solar masses</p>
+      <p><strong>age:</strong> {galaxy.age} billion years</p>
+        </div>
+      </div>
+      <p><strong>description:</strong> {galaxy.description}</p>
       {galaxy.phenomena.length > 0 && (
         <>
-          <h2>Fenómenos asociados</h2>
+          <h2>Phenomena Presents </h2>
           <ul>
             {galaxy.phenomena.map((phen) => (
               <li key={phen.id}>
-                <strong>{phen.name}</strong>: {phen.description}
+                <strong>{phen.name}</strong>
               </li>
             ))}
           </ul>
         </>
       )}
+
     </div>
   );
 }

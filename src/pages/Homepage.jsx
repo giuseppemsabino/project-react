@@ -5,13 +5,13 @@ export default function HomePage() {
   return (
     <>
       <section>
-        <div style={{ width: "100%", height: "600px", position: "relative" }}>
+        <div className="particles-section">
           <Particles
             particleColors={["#ffffff", "#ffffff"]}
-            particleCount={1000}
+            particleCount={1500}
             particleSpread={10}
             cameraDistance={20}
-            speed={0.1}
+            speed={0.05}
             particleBaseSize={100}
             moveParticlesOnHover={false}
             alphaParticles={false}
@@ -22,7 +22,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="container my-5 intro-section">
+
+      <section className="container intro-section ">
         <div className="d-md-flex flex-md-row">
           <div className="text-center align-items-center align-content-center col-12 col-md-6  ">
             <p className="lead ">
@@ -45,16 +46,17 @@ export default function HomePage() {
               that give each galaxy its unique identity.
             </p>
           </div>
-          <div className="col-12 col-md-6 p-2">
+          <div className="col-12 intro-img col-md-6 p-2">
             <img
               src="src\assets\img\galaxies_in_space.jpg"
               alt=""
-              className="intro-img"
+              className="w-100 h-100 object-fit-cover"
             />
           </div>
         </div>
       </section>
-      <section className="frase-section ">
+
+      <section className="frase-section my-3">
         <div className="frase-box text-center mx-5">
           <h3>
             Every second, somewhere in the universe, a star is born... and
@@ -66,6 +68,33 @@ export default function HomePage() {
             European Space Agency Image credit: ESA/Hubble, NASA, and C. Murray
           </p>
         </span>
+      </section>
+
+      <section className="container">
+        <div className="d-flex justify-content-center align-items-center h-100 flex-column">
+          <div className="explore-title">
+            <h2>EXPLORE</h2>
+          </div>
+          <div className="text-center fs-5">
+            <p>
+              Not sure where to start? Head to the Galaxies section to explore
+              different types, or check out the Cosmic Phenomena page to see
+              what makes the universe so dynamic.
+            </p>
+          </div>
+          <div className="d-flex w-100 justify-content-around my-4 ">
+            <div>
+              <a className="btn btn-danger" href="/galaxies">
+                Galaxies
+              </a>
+            </div>
+            <div>
+              <a className="btn btn-danger" href="/phenomena">
+                Cosmic Phenomena
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -82,25 +111,29 @@ export default function HomePage() {
                 class="d-block w-100"
                 alt="..."
               />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>
-                  Some representative placeholder content for the first slide.
-                </p>
+              <div class="carousel-caption d-md-block">
+                <h5>Galaxies Crashing</h5>
+                <p>Have you ever seen galaxies crashing?</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="src\assets\img\lens.jpg" class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>
-                  Some representative placeholder content for the first slide.
-                </p>
+              <img
+                src="src\assets\img\lens.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption  d-md-block">
+                <h5>Gravitational Lenses</h5>
+                <p>Do you know why gravitational lenses are formed?</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
+              <img
+                src="src\assets\img\arms.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption  d-md-block">
                 <h5>First slide label</h5>
                 <p>
                   Some representative placeholder content for the first slide.
