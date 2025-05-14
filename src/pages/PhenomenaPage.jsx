@@ -1,13 +1,24 @@
+import { useEffect, useState } from "react";
 import { useGalaxyContext } from "../context/GalaxyContextProvider";
+import SearchBar from "../components/SearchBar";
 
 export default function PhenomenaPage() {
   const { phenomenonData } = useGalaxyContext();
+  const [filteredPhenomena, setFilteredPhenomena]= useState(phenomenonData);
   const imgUrl = import.meta.env.VITE_IMAGE_URL;
 
-  console.log(phenomenonData);
+  useEffect(() => {
+    setFilteredPhenomena(phenomenonData);
+  },[phenomenonData]);
+  // console.log(phenomenonData);
   return (
     <div className="container ">
-      {phenomenonData.map((phenomenon, index) => (
+      <SearchBar
+              data={phenomenonData}
+              onfilter={setFilteredPhenomena}
+              placeholder="Search Phenomenon..."
+            />
+      {filteredPhenomena.map((phenomenon, index) => (
         <div
           key={phenomenon.id}
           className={`d-flex flex-column gap-3 flex-md-row my-5 align-items-center ${

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CircularText from "../CircularText";
 import GooeyNav from "./NavBar";
 
@@ -10,6 +10,10 @@ const items = [
 ];
 
 export default function Header() {
+
+  const location = useLocation();
+
+  const currentIndex = items.findIndex(item => item.to === location.pathname);
   return (
     <header className="d-flex justify-content-around align-items-center my-3">
       <div className="d-flex justify-content-start">
@@ -29,7 +33,7 @@ export default function Header() {
         particleCount={15}
         particleDistances={[90, 10]}
         particleR={100}
-        initialActiveIndex={0}
+        initialActiveIndex={currentIndex === -1 ? 0 : currentIndex}
         animationTime={600}
         timeVariance={300}
         colors={[1, 2, 3, 1, 2, 3, 1, 4]}

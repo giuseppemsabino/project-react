@@ -1,5 +1,6 @@
 import Particles from "../components/layout/Particles";
 import "../assets/css/index.css";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -98,7 +99,6 @@ export default function HomePage() {
       </section>
 
       <section>
-        <div></div>
         <div
           id="carouselExampleRide"
           class="carousel slide"
@@ -111,8 +111,11 @@ export default function HomePage() {
                 class="d-block w-100"
                 alt="..."
               />
+
               <div class="carousel-caption d-md-block">
-                <h5>Galaxies Crashing</h5>
+                <a href="/phenomena" className="carousel-links">
+                  <h5>Galaxies Crashing</h5>
+                </a>
                 <p>Have you ever seen galaxies crashing?</p>
               </div>
             </div>
@@ -123,7 +126,10 @@ export default function HomePage() {
                 alt="..."
               />
               <div class="carousel-caption  d-md-block">
-                <h5>Gravitational Lenses</h5>
+                <a href="/phenomena" className="carousel-links">
+                  {" "}
+                  <h5>Gravitational Lenses</h5>
+                </a>
                 <p>Do you know why gravitational lenses are formed?</p>
               </div>
             </div>
@@ -134,10 +140,11 @@ export default function HomePage() {
                 alt="..."
               />
               <div class="carousel-caption  d-md-block">
-                <h5>First slide label</h5>
-                <p>
-                  Some representative placeholder content for the first slide.
-                </p>
+                <a href="/phenomena" className="carousel-links">
+                  {" "}
+                  <h5>Spiral Arms</h5>
+                </a>
+                <p>One of the most common features of many galaxies.</p>
               </div>
             </div>
           </div>

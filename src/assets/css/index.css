@@ -32,13 +32,13 @@ section {
   font-size: 3rem;
   font-weight: 500;
 }
-
-/* ? 1st section under particles */
 .particles-section {
   position: relative;
   width: 100%;
   height: 600px;
 }
+
+/* ? 1st section under particles */
 .intro-section .shortcut {
   color: white;
   transition: 1s;
@@ -96,10 +96,17 @@ section {
 .carousel-item {
   height: 600px;
 }
+.carousel-links{
+  text-decoration: none;
+  color: white;
+}
+.carousel-links h5:hover{
+  background-color: white;
+}
 
 /* ! ArchivePage */
 
-.galaxies-title{
+.galaxies-title {
   font-size: 3.5rem;
 }
 
@@ -107,7 +114,7 @@ section {
   width: 400px;
   height: 400px;
   border-radius: 10px;
-  
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: visible;
 }
@@ -135,13 +142,46 @@ section {
   box-shadow: 1px 1px 20px 18px rgba(0, 0, 0, 0.71);
 }
 
-
-
-.phen-img{
+/* ! PhenomenaPAge */
+.phen-img {
   height: 300px;
   width: 100%;
 
   object-fit: cover;
   object-position: center;
+}
+
+/* ! ShowPage */
+
+.show-header-section {
+  height: 400px;
+  position: relative;
+}
+.galaxy-image-container {
+  height: 100%;
+}
+.galaxy-image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.galaxy-show-name {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+}
+.galaxy-show-name h1 {
+  font-size: 4rem;
+  padding: 10px 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px 10px rgba(255, 255, 255, 0.329);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
