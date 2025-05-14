@@ -6,7 +6,7 @@ export default function PhenomenaPage() {
 
   console.log(phenomenonData);
   return (
-    <div className="container phen-info">
+    <div className="container ">
       {phenomenonData.map((phenomenon, index) => (
         <div
           key={phenomenon.id}
