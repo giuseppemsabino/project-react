@@ -34,38 +34,37 @@ export default function ShowPage() {
       <div className="container">
         <div className="galaxy-stats ">
           <div>
-              <h3>Diameter</h3> 
-            <p>
-              {galaxy.diameter} light years
-            </p>
+            <h3>Diameter</h3>
+            <p>{galaxy.diameter} light years</p>
           </div>
           <div className="">
-              <h3>Mass</h3>
-            <p>
-              {galaxy.mass} solar masses
-            </p>
+            <h3>Mass</h3>
+            <p>{galaxy.mass} solar masses</p>
           </div>
           <div>
-              <h3>Age</h3> 
-            <p>
-              {galaxy.age} billion years
-            </p>
+            <h3>Age</h3>
+            <p>{galaxy.age} billion years</p>
           </div>
         </div>
-        <p>
-          <strong>description:</strong> {galaxy.description}
-        </p>
+        {/* Description */}
+        <div className="my-5 p-4 border border-white rounded">
+          <h4 className="mb-3">Description</h4>
+          <p className="text-white-50">{galaxy.description}</p>
+        </div>
+
+        {/* Phenomena */}
         {galaxy.phenomena.length > 0 && (
-          <>
-            <h2>Phenomena Presents </h2>
-            <ul>
+          <div className="mb-5 p-4 border border-white rounded">
+            <h4 className="mb-3">Phenomena Present</h4>
+            <ul className="list-unstyled m-0">
               {galaxy.phenomena.map((phen) => (
-                <li key={phen.id}>
-                  <strong>{phen.name}</strong>
+                <li key={phen.id} className="d-flex align-items-center mb-2">
+                  <span className="me-2 text-primary">★</span>
+                  <strong className="text-white">{phen.name}</strong>
                 </li>
               ))}
             </ul>
-          </>
+          </div>
         )}
       </div>
     </div>
