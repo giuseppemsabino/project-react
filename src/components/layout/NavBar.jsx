@@ -153,7 +153,7 @@ const GooeyNav = ({
     <div className="gooey-nav-container " ref={containerRef}>
       <nav className="navbar  text-center navbar-expand-lg justify-content-center gap-3 ">
         <button
-          className="navbar-toggler d-lg-none text-white border-0 "
+          className="navbar-toggler custom-toggler d-lg-none text-white border-0 "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -161,9 +161,9 @@ const GooeyNav = ({
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon "></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent" >
         <ul className="navbar-nav flex-column flex-md-row text-start" ref={navRef}>
           {items.map((item, index) => (
             <Link
